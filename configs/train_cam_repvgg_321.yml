@@ -1,0 +1,22 @@
+# NAME: "train_cam_repvgg"
+
+SEED: 13
+
+DATA: 
+  ROOT: "/home/ubt/devdata/zdy/BANA_WHU/datasets/WHU"
+  NUM_CLASSES: 2 # For VOC
+  MODE: "train"
+  BATCH_SIZE: 10
+  CROP_SIZE: (321, 321)
+  
+MODEL:
+  WEIGHTS: "RepVGG-B1g2-train.pth" # From PyCaffe and VGG-16 ImageNet pretrained weights [vgg16_20M.caffemodel] (http://liangchiehchen.com/projects/Init%20Models.html).
+  ROI_SIZE: [2,2]
+  # GRID_SIZE: 4
+
+SOLVER:
+  LR: 1e-4
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 5e-4
+  MAX_ITER: 8000  
+  MILESTONES: [5000]

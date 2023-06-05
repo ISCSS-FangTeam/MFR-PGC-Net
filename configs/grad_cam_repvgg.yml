@@ -1,0 +1,18 @@
+# NAME: "grad_cam_repvgg"
+# SAVE_PSEUDO_LABLES: True
+
+SEED: 13
+
+# TARGET_LAYER: "stage4"
+
+DATA: 
+  ROOT: "/home/ubt/devdata/zdy/mfr-pgc-net/datasets/WHU"
+  NUM_CLASSES: 2 # For VOC
+  MODE: "train"
+  
+MODEL:
+  # WEIGHTS: "train_cam_repvgg.pt" # From Stage 1
+  ROI_SIZE: [None,None]
+  # GRID_SIZE: 1
+  BG_THRESHOLD: 0.99
+  DCRF: [5, 50, 3, 3, 3]
